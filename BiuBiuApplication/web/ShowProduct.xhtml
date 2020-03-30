@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      <link rel="stylesheet" type="text/css" href="CSS/show_product.css"/>
+
+    <h:head>
+        <title>Show Product</title>
+    </h:head>
+    <h:body>
+        <!--Header-->
+        <h:form class="home_unload_header" >
+            <h:outputLink  class="team_name" value="buyer.xhtml?faces-redirect=true">BiuBiu</h:outputLink>
+            <h:inputText id="search" class="search_product" pt:placeholder="Search Product" value="#{search.proName}"  >
+            </h:inputText>
+            <h:commandButton class="search_img" image="images/search_icon.png" action="#{search.searchProduct}" />
+
+            <h:commandButton image="images/account_icon.png" class="account_icon" action="buyer_account.xhtml?faces-redirect=true"/>
+            <h:commandLink value="#{account.account}" class="account_link" action="buyer_account.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/shopcart_icon.png" class="order_icon"  action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandLink value="My Order" class="order_link" action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/help_icon.png" class="help_icon"  action="help.xhtml?faces-redirect=true"/>
+            <h:commandLink value="Help Center" class="help_link" action="help.xhtml?faces-redirect=true"/>
+
+        </h:form>
+        <!--Body-->
+        <div class="pro_seller">
+            <h:form class="pro_de">
+                <h:dataTable value="#{showPro.product}" var="pro"  border="">   
+                    <h:column>
+                        <h:panelGrid columns="2" >  
+                            <h:graphicImage value="#{pro.pro_imgPath}" style="height:200px;width:200px; -webkit-box-shadow:  5px 10px 15px  #999999; margin-left: 20px; margin-right: 10px;;"/>
+                            <h:panelGrid columns="1" class="prod_detail">
+                                <h:outputText id="proname" value="#{pro.pro_name}" class="proName" style=" font-size: 35px"/>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="protype" value="Type：" class="proTypePut"/>
+                                    <h:outputText id="protype" value="#{pro.pro_type}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="prominprice" value="Minimum Bid Price:" class="proTypePut"/>
+                                    <h:outputText id="prominprice" value="#{pro.pro_minPrice}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="proorigprice" value="Orignal Price:" class="proTypePut"/>
+                                    <h:outputText id="proorigprice" value="#{pro.pro_origPrice}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="prousetime" value="Product Usetime:" class="proTypePut"/>
+                                    <h:outputText id="prousetime" value="#{pro.pro_usetime}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="prodetail" value="Product Details:" class="proTypePut"/>
+                                    <h:outputText id="prodetail" value="#{pro.pro_details}" class="proTypeText" style="margin-right: 20px;"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="proposttime" value="Posttime:" class="proTypePut"/>
+                                    <h:outputText id="proposttime" value="#{pro.pro_posttime}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="proType">
+                                    <h:outputLabel for="proexpiry" value="Expiry:" class="proTypePut"/>
+                                    <h:outputText id="proexpiry" value="#{pro.pro_expiry}" class="proTypeText"/>
+                                </h:panelGroup>
+                                <h:panelGroup class="buy">
+                                    <h:outputLabel for="propay" value="How much do you want to pay?"  class="buyPut"/>
+                                    <br/>
+                                    <h:inputText id="propay" valueChangeListener="#{bid.bidPrice}" class="buyInput" style="width: 80px"/>
+                                    <h:commandButton value="Buy it now" action="#{bid.operation}" class="buyit" />
+                                    <br/>
+                                    <h:outputText style="color:red" value="#{bid.showValue}" rendered="#{bid.result}"/>
+                                    <br/>
+                                </h:panelGroup>
+
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+            <div class="seller">
+                <h:dataTable value="#{showPro.seller}" var="sell" border=""  >
+                    <h:column>
+                        <h:graphicImage value="images/account.png" style="height:50px;width:50px;"/>
+                        <br/>
+                        
+                        <h:panelGroup>
+                            <h:outputLabel for="sell_name" value="Seller Name：" class="seller_i"/>
+                            <h:outputText id="sell_name" value="#{sell.sell_name}" class="seller_Text"/>
+                        </h:panelGroup>
+                        <br/>
+                        <h:panelGroup>
+                            <h:outputLabel for="sell_level" value="Seller Level："  class="seller_i"/>
+                            <h:outputText id="sell_level" value="#{sell.sell_level}" class="seller_Text"/>
+                        </h:panelGroup>
+                        <br/>
+                        <h:panelGroup rendered="#{showPro.show}">
+                            <h:outputLabel for="sell_contact" value="Seller Contact："  class="seller_i"/>
+                            <h:outputText id="sell_contact" value="#{sell.sell_contact}" class="seller_Text"/>
+                        </h:panelGroup>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </div>
+        <div class="comments">
+           
+            <h2 class="com_h1">Product Comments</h2>
+            <h:form class="comm">
+                <h:selectOneRadio id="score" value="#{Com.com_type}" required="true" class="radio">
+                    <f:selectItem id="s1" itemLabel="Excellent" itemValue="good"/>
+                    <f:selectItem id="s2" itemLabel="Terrible" itemValue="bad"/>
+                </h:selectOneRadio>
+                <h:outputLabel for=":content" value="Write your comments about seller and product"/>
+                <h:inputTextarea id="content" cols="15" rows="6" value="#{Com.com_detail}" class="com_area"/>
+                <h:commandButton value="Send" action="#{Comment.submit(Com)}" class="com_but"/>
+            </h:form>
+            <div class="pro_table">
+                <h:dataTable value="#{showPro.comment}" var="com" border="" class="com_table" >
+                <h:column>
+                    <h:panelGroup>
+                        <h:outputLabel for="com_type" value="Comment type："/>
+                        <h:outputText id="com_type" value="#{com.com_type}"/>
+                    </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="com_detail" value="Comment："/>
+                        <h:outputText id="com_detail" value="#{com.com_detail}"/>
+                    </h:panelGroup>
+                </h:column>
+            </h:dataTable>
+                </div>
+        </div>
+        <!--Footer-->
+        <hr/>
+        <div class="foot">
+            <h:form class="home_unload_footer">
+                <div class="footer1">
+                    <h1><center>Need Help?</center></h1>
+                    <h4>Talk to us about your need</h4>
+                    <h4>Call : 17863901848</h4>
+                </div>
+                <div class="footer2">
+                    <h1>Stay in Know</h1>
+                    <h4>Sign  up for us news, sales and deals.</h4>
+                    <h:inputText class="footer_email" pt:placeholder="12345@qq.com"/>
+                    <h:commandButton image="images/email_icon.png" class="footer_email_icon"/>
+                </div>
+                <div  class="footer3">
+                    <h1>Contact Us</h1>
+                    <h4>If you want to konw more about our shop, please contact us.</h4>
+                    <h:commandButton class="footer_contact_button" value="Contact Us" action="contact.xhtml?faces-redirect=true"/>
+                </div>
+            </h:form>
+            <br/>
+            <hr/>
+            <h:form class="home_unload_footer">
+                <h2 class="footer_title">BiuBiu Used Shopping Center</h2>
+                <div class="link">
+                    <h:commandLink class="footer_about" value="About Us" action="about.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_contact" value="Feedback" action="Feed_back.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_seeFee" value="Show Feedback" action="ShowFeedback.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_help" value="Help" action="help.xhtml?faces-redirect=true"/><br/>
+                </div>
+                <h4 class="copyright">Copyright © 2017 Biubiubiu letitbeme.com-All Rights Reserved</h4>
+                <h:graphicImage value="images/BiuBiu_icon.png" class="biu_img" width="242px" height="48px"/>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
+

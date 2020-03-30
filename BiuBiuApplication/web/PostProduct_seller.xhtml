@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    <h:head>
+        <title>Post Product</title>
+    </h:head>
+    <h:body>
+          <!--body-->
+         <ui:composition template="Format_Seller.xhtml">
+             <ui:define name="seller_title">
+                 <h1  class="po">Post Product</h1>
+            </ui:define>
+            <ui:define name="seller_content">
+                <h:form class="seller_posting">
+                    <h1 class="post_h1">Weclome to post Your Product.When you post your used product,a free ad will expire after 10 days.</h1>
+                    <h:panelGrid columns="3" class="pro_panel">
+                        <h:outputLabel for="pro_name" value="Product Name" class="pro_name"/>
+                        <h:inputText id="pro_name" required="true" requiredMessage="Enter ID" 
+                                     value="#{pro.pro_name}"
+                                     validatorMessage="name should be less than 20 Characters" 
+                                     pt:placeholder="Enter Product Name" class="pro_name_input" >
+                            <f:validateLength for="pro_name" minimum="0" maximum="20"/>
+                        </h:inputText>
+                        <h:message for="pro_name" class="pro_name_msg"/>
+
+                        <h:outputLabel for="pro_type" value="Product Type" class="pro_type"/>
+
+                        <h:selectOneMenu id="pro_type" value="#{pro.pro_type}" class="type_value">
+                            <f:selectItem id="t1" itemLabel="Man‘s" itemValue="Men"/>
+                            <f:selectItem id="t2" itemLabel="Women's" itemValue="Women"/>
+                            <f:selectItem id="t3" itemLabel="Kids" itemValue="Kids"/>
+                            <f:selectItem id="t4" itemLabel="Electronics" itemValue="Electronics"/>
+                            <f:selectItem id="t5" itemLabel="Food" itemValue="Food"/>
+                            <f:selectItem id="t6" itemLabel="Homeware" itemValue="H\omeware"/>
+                            <f:selectItem id="t7" itemLabel="Movies and Music" itemValue="Movies and Music"/>
+                            <f:selectItem id="t8" itemLabel="Outdoors" itemValue="Outdoors"/>
+                            <f:selectItem id="t9" itemLabel="Stationery" itemValue="Stationery"/>
+                            <f:selectItem id="t10" itemLabel="Toys" itemValue="Toys"/>
+                        </h:selectOneMenu>
+                        <h:message for="pro_type"/>
+
+                        <h:outputLabel for="minPrice" value="Minimum Bid Price"/>
+                        <h:inputText id="minPrice" required="true" requiredMessage="Enter Minimum Bid Price" 
+                                     value="#{pro.pro_minPrice}" class="min_price"
+                                     validatorMessage="The minimum price must over 0"
+                                     pt:placeholder="Enter Minimum Bid Price">
+                            <f:validateDoubleRange for="minPrice" minimum="0" />
+                        </h:inputText>
+                        <h:message for="minPrice" class="min_Price"/>
+
+                        <h:outputLabel for="origPrice" value="Orignal Price"/>
+                        <h:inputText id="origPrice" required="true" requiredMessage="Orignal Price"
+                                     value="#{pro.pro_origPrice}" class="max_price"
+                                     validatorMessage="The orignal price must over 0"
+                                     pt:placeholder="Enter Orignal Price">
+                            <f:validateDoubleRange for="origPrice" minimum="0" />
+                        </h:inputText>
+                        <h:message for="origPrice" class="max_Price"/>
+
+                        <h:outputLabel for="pro_usetime" value="Product Usetime"/>
+                        <h:inputText id="pro_usetime" required="true"
+                                     requiredMessage="Enter Product Usetime"
+                                     value="#{pro.pro_usetime}" class="use_time"
+                                     pt:placeholder="Enter Product Usetime" >
+
+                        </h:inputText>
+                        <h:message for="pro_usetime" class="usetime"/>
+
+                        <h:outputLabel for="contactNum" value="Contact Number"/>
+                        <h:inputText id="contactNum" required="true" requiredMessage="Enter Mobile Number" 
+                                     validatorMessage="Invalid Number" class="contact_input"
+                                     pt:placeholder="Enter Moblie Number"
+                                     value="#{pro.pro_contactNum}">
+                            <f:validateRegex for="contactNum"   pattern="\+861[3578][0-9]{9}"/> 
+                        </h:inputText>
+                        <h:message for="contactNum" class="contact_num"/>
+
+                        <h:outputLabel for="pro_details" value="Product Details"/>
+                        <h:inputTextarea id="pro_details" requiredMessage="Enter Product Details" rows="5" cols="10"
+                                         value="#{pro.pro_details}" class="detail_input"
+                                         pt:placeholder="Enter Product Details">
+
+                        </h:inputTextarea>
+                        <h:message for="pro_details" class="pro_detail"/>
+
+
+
+                        <h:commandButton value="Post" action="#{pro.post}" class="post_but"/>
+                    </h:panelGrid>
+                </h:form>
+                
+                <h:form  enctype="multipart/form-data" class="upphoto">
+                 <h:panelGrid columns="3">
+                    <h:outputLabel for="pro_img" value="Select a photo " class="select_text"/>
+                    <h:inputFile id="pro_img" value="#{img.part}"   required="true" requiredMessage="Enter ID" class="in_but"/>
+                    <h:commandButton action="#{img.submit()}" value="Upload"  class="select_but"/>
+                    <h:message for="pro_img"/>
+                 </h:panelGrid>
+            </h:form>
+             
+            </ui:define>
+         </ui:composition>
+    </h:body>
+</html>
+

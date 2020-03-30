@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    
+    <navigation-rule>
+                    <from-view-id>/buyer_login.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-action>#{Buyer.login}</from-action>
+                        <from-outcome>success</from-outcome>
+                        <to-view-id>/faces/buyer.xhtml</to-view-id>
+                        <redirect>
+                    </redirect>
+                    </navigation-case>
+                    <navigation-case>
+                        <from-action>#{Buyer.login}</from-action>
+                        <from-outcome>error</from-outcome>
+                        <to-view-id>/login_error_buyer.xhtml</to-view-id>
+                    </navigation-case>
+                    <redirect>
+                    </redirect>
+     </navigation-rule>
+            <navigation-rule>
+                    <from-view-id>/buyer_register.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-action>#{Buyer.register(Buy)}</from-action>
+                        <from-outcome>success</from-outcome>
+                        <to-view-id>/RegisterSuccess.xhtml</to-view-id>
+                        <redirect>
+                    </redirect>
+                    </navigation-case>
+                    <navigation-case>
+                        <from-action>#{Buyer.register(Buy)}</from-action>
+                        <from-outcome>error</from-outcome>
+                        <to-view-id>/RegisterError.xhtml</to-view-id>
+                    </navigation-case>
+                    <redirect>
+                    </redirect>
+     </navigation-rule>
+     <navigation-rule>
+                    <from-view-id>/seller_login.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-action>#{Seller.login}</from-action>
+                        <from-outcome>success</from-outcome>
+                        <to-view-id>/faces/seller_account.xhtml</to-view-id>
+                        <redirect>
+            </redirect>
+                    </navigation-case>
+                    <navigation-case>
+                        <from-action>#{Seller.login}</from-action>
+                        <from-outcome>error</from-outcome>
+                        <to-view-id>/login_error_seller.xhtml</to-view-id>
+                    </navigation-case>
+                    <redirect>
+            </redirect>
+      </navigation-rule>
+               <navigation-rule>
+                    <from-view-id>/seller_register.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-action>#{Seller.register(Sell)}</from-action>
+                        <from-outcome>success</from-outcome>
+                        <to-view-id>/RegisterSuccess.xhtml</to-view-id>
+                        <redirect>
+                    </redirect>
+                    </navigation-case>
+                    <navigation-case>
+                        <from-action>#{Seller.register(Sell)}</from-action>
+                        <from-outcome>error</from-outcome>
+                        <to-view-id>/RegisterError.xhtml</to-view-id>
+                    </navigation-case>
+                    <redirect>
+                    </redirect>
+     </navigation-rule>
+      <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-action>#{account.logout}</from-action>
+            <from-outcome>Log out</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+     </navigation-rule>
+      <navigation-rule>
+        <from-view-id>/Feed_back.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Submitted</from-outcome>
+            <to-view-id>/SubmitFeedback.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-action>#{bid.operation}</from-action>
+            <from-outcome>shopping confirm</from-outcome>
+            <to-view-id>/ShoppingConfirm.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bid.operation}</from-action>
+            <from-outcome>the price is low</from-outcome>
+            <to-view-id>/ShowProduct.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bid.operation}</from-action>
+            <from-outcome>buyer login</from-outcome>
+            <to-view-id>/buyer_login.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ShoppingConfirm.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bid.cancel}</from-action>
+            <from-outcome>cancel the shopping</from-outcome>
+            <to-view-id>/ShowProduct.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{bid.confirm}</from-action>
+            <from-outcome>confirm the shopping</from-outcome>
+            <to-view-id>/ShoppingSubmited.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+        
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/SubmitOrder.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>submit</from-outcome>
+            <to-view-id>/PaySuccess.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case> 
+     </navigation-rule>
+     
+     <navigation-rule>
+        <from-view-id>/*</from-view-id>
+       <navigation-case>
+            <from-outcome>ok</from-outcome>
+            <to-view-id>/ProductFilter.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+               <navigation-case>
+            <from-outcome>search</from-outcome>
+            <to-view-id>/SearchProduct.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+     </navigation-rule>
+     
+       <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <navigation-case>
+            <from-outcome>post</from-outcome>
+            <to-view-id>/PostSucess.xhtml</to-view-id>
+            <redirect>
+            </redirect>
+        </navigation-case>
+     </navigation-rule>
+     
+     <navigation-rule>
+                    <from-view-id>/ShowProduct.xhtml</from-view-id>
+                    <navigation-case>
+                        <from-action>#{Comment.submit(Com)}</from-action>
+                        <from-outcome>go on</from-outcome>
+                        <to-view-id>/ShowProduct.xhtml</to-view-id>
+                        <redirect>
+            </redirect>
+                    </navigation-case>
+                    <navigation-case>
+                        <from-action>#{Comment.submit(Com)}</from-action>
+                        <from-outcome>buyer login</from-outcome>
+                        <to-view-id>/account_type.xhtml</to-view-id>
+                        <redirect>
+            </redirect>
+                    </navigation-case>
+      </navigation-rule>
+
+</faces-config>

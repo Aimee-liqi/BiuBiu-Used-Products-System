@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="com.biubiu.model.BidProduct" table="BidProduct">
+          <id name="id" type="integer">
+              <column name="id"/>
+              <generator class="identity"/>
+          </id>
+        <property name="pro_id" type="integer">
+            <column name="pro_id"/>
+        </property>
+        <property name="pro_name"  type="string">
+            <column name="pro_name" />
+        </property>
+        <property name="buy_price" type="float">
+            <column name="buy_price"/>
+        </property>
+        <property name="pro_minPrice" type="float">
+            <column name="pro_minPrice"/>
+        </property>
+        <property name="buy_id"  type="string">
+            <column name="buy_id" />
+        </property>
+        <property name="buy_name"  type="string">
+            <column name="buy_name" />
+        </property>
+        <property name="sell_id"  type="string">
+            <column name="sell_id" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+        <link rel="stylesheet" type="text/css" href="CSS/buyer_login.css"/>
+    <h:head>
+        <title>Login for  Seller</title>
+    </h:head>
+    <h:body>
+        <h:form class="f_login">
+            <h:graphicImage value="images/biu_icon.png" class="biu_img"/>
+            <h2 class="login_saying1">"Everything I don't use, I sold on Biubiu"</h2><br/>
+            <h:panelGrid class="login_panel">
+                
+                <h4 class="login_saying2">Register it you will sell your used things.</h4>
+                <h4 class="email_font">Email : <h:inputText class="login_email" pt:placeholder="Input Your Emaill"  value="#{Seller.login_email}"/></h4>
+                <h4 class="pass_font">Password : <h:inputSecret class="login_pass" pt:placeholder="Input Your Password" value="#{Seller.login_pass}"/></h4>
+                <h:commandButton value="Sign In" class="login_sign" action="#{Seller.login}"/>
+                <h:commandButton value="Register" class="login_create" action="seller_register.xhtml?faces-redirect=true"/>
+            </h:panelGrid>
+            <h:panelGrid class="as_guest">
+                <h:commandLink value="Browse as a guest" class="guest" action="index.xhtml?faces-redirect=true"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

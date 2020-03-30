@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-1-2, 2:23:13
+    Author     : Administrator
+*/
+
+
+.error{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.error_pa{
+    border-color: black;
+    border-style: solid;
+    -webkit-border-radius: 10px;
+    top:100px;
+    font-family: "张海山锐线体简";
+    width: 500px;
+    left: 450px;
+    height: 350px;
+    position: relative;
+    text-align: center;
+}
+
+.not_corret{
+    font-size: 30px;
+    font-family: "Uni Sans Thin";
+}
+.again_text{
+    color: red;
+    font-size: 20px;
+}
+.login_again{
+    height: 45px;
+    background-color: white;
+    color:black;
+    position: relative;
+    left: -100px;
+    top:20px;
+    -webkit-border-radius: 10px;
+     border-color: black;
+     outline: none;
+}
+.login_again:hover{
+    background-color: black;
+    color:white;
+   
+    
+}
+.new_account{
+     height: 45px;
+    color: #666666;
+    position: relative;
+    left: 90px;
+    top:-57px;
+    -webkit-border-radius: 10px;
+    text-decoration: none;
+}
+.new_account:hover{
+    color:black;
+    border-color: black;
+    height: 30px
+}

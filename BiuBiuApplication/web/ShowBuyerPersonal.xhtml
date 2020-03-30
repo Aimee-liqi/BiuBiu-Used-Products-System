@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:dataTable value="#{showP.buyer}" var="buy" border="1">
+                <h:column>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_name" value="Buyer Name："/>
+                        <h:outputText id="buy_name" value="#{buy.buy_name}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_level" value="Buyer Level："/>
+                        <h:outputText id="buy_level" value="#{buy.buy_level}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_times" value="Shopping times："/>
+                        <h:outputText id="buy_times" value="#{buy.buy_times}"/>
+                   </h:panelGroup>
+                </h:column>
+            </h:dataTable>
+    </h:body>
+</html>
+

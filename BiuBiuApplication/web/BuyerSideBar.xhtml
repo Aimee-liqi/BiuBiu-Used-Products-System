@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" type="text/css" href="CSS/buyer_format.css"/>
+    
+    <h:head>
+        <title>Buyer Side Bar</title>
+    </h:head>
+    <h:body>
+        <!--Body-->
+        <ul class="buyer_nav"  id="side">
+            <h:form id="buysideBar">
+               
+                <li><h:outputText value="#{account.account}" class="buy_acc" /></li>
+                
+                <li> 
+                        <h:commandLink action="#{account.logout}" value="Log out" class="logout"/></li>
+                
+                <li><h:commandLink action="buyer_account.xhtml?faces-redirect=true"  class="buyer_bar_link"><h5 class="buyer_bar">Personal star rating</h5></h:commandLink></li>
+           
+                <li><h:commandLink action="contact_sellers.xhtml?faces-redirect=true"  class="buyer_bar_link"><h5 class="buyer_bar">Contact With Sellers</h5></h:commandLink></li>
+           
+                <li><h:commandLink action="ShowBidList_buyer.xhtml?faces-redirect=true"  class="buyer_bar_link"><h5 class="buyer_bar">Bid List</h5></h:commandLink></li>
+                
+                <li><h:commandLink action="ShowBuyerOrderList_buyer.xhtml?faces-redirect=true"  class="buyer_bar_link"><h5 class="buyer_bar">Buyer Order</h5></h:commandLink></li>
+            </h:form>
+        </ul>
+       
+
+    </h:body>
+</html>
+
+
+
+

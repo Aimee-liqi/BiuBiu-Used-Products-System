@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+     <class name="com.biubiu.model.Contact_Buyer" table="Contact_Buyer">
+        <id name="con_id" type="integer" column="con_id">
+            <generator class="identity"/>
+        </id>
+        <property name="content" type="string">
+            <column name="content"/>
+        </property>
+        <property name="buy_id"  type="string">
+            <column name="buy_id"/>
+        </property>
+        <property name="sell_id"  type="string">
+            <column name="sell_id"/>
+        </property>
+        <property name="sendtime"  type="string">
+            <column name="sendtime"/>
+        </property>
+    </class>
+  
+
+</hibernate-mapping>

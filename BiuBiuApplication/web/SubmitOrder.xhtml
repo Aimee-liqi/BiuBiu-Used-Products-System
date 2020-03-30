@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" type="text/css" href="CSS/home.css"/>
+    
+    <h:head>
+        <title>Submit Order</title>
+    </h:head>
+    <h:body>
+        <!--Header-->
+        <h:form class="home_unload_header" >
+            <h:outputLink  class="team_name" value="buyer.xhtml?faces-redirect=true">BiuBiu</h:outputLink>
+            <h:inputText id="search" class="search_product" pt:placeholder="Search Product" value="#{search.proName}"  >
+                </h:inputText>
+            <h:commandButton class="search_img" image="images/search_icon.png" action="#{search.searchProduct}" />
+        
+        <h:commandButton image="images/account_icon.png" class="account_icon" action="buyer_account.xhtml?faces-redirect=true"/>
+        <h:commandLink value="#{account.account}" class="account_link" action="buyer_account.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/shopcart_icon.png" class="order_icon"  action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandLink value="My Order" class="order_link" action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/help_icon.png" class="help_icon"  action="help.xhtml?faces-redirect=true"/>
+            <h:commandLink value="Help Center" class="help_link" action="help.xhtml?faces-redirect=true"/>
+            
+        </h:form>
+        <!--Body-->
+        <h2 class="info">Please Wirte Your Information</h2>
+        <h:form class="subm_or">
+            <h:panelGrid columns="3">
+                
+                <h:outputLabel for="fName" value="First Name" class="NN"/>
+                <h:inputText id="fName" value="#{pay.first_name}" required="true" requiredMessage="Enter First Name" class="input"/>
+                <h:message for="fName"/>
+                <h:outputLabel for="lName" value="Last Name" class="NN" />
+                <h:inputText id="lName" value="#{pay.last_name}" required="true" requiredMessage="Enter Last Name" class="input"/>
+                <h:message for="lName" />
+                <h:outputLabel for="address" value="Address" class="NN"/>
+                <h:inputTextarea id="address" value="#{pay.address}" required="true" requiredMessage="Enter your address" class="input_area"/>
+                <h:message for="address"/>
+                <h:outputLabel for="mobile" value="Mobile Phone" class="NN"/>
+                <h:inputText id="mobile" value="#{pay.mobile}" required="true" requiredMessage="Enter Mobile Number"  class="input">
+                    <f:validateRegex pattern="\+861[3578][0-9]{9}" for="pay_mob"/>
+                </h:inputText>
+                <h:message for="mobile"/>
+                <h:outputLabel for="ccNum" value="Credit Card Number" class="NN"/>
+                <h:inputText id="ccNum" value="#{pay.ccNum}"  required="true" requiredMessage="Enter Card Number"  class="input">
+                    <f:valueChangeListener type="com.biubiu.listeners.CCValueListener"/>
+                </h:inputText>
+                <h:message for="ccNum"/>
+                <h:outputLabel for="ccName" value="Credit Card Holder Name" class="NN"/>
+                <h:inputText id="ccName" value="#{pay.ccName}" required="true" requiredMessage="Enter Card Holder Name"  class="input"/>
+                <h:message for="ccName"/>
+                <h:outputLabel for="cvv" value="CVV No." class="NN"/>
+                <h:inputText id="cvv" value="#{pay.cvv}" required="true" requiredMessage="Enter CVV"  class="input"/>
+                <h:message for="cvv"/>
+            </h:panelGrid>
+            <h:commandButton  value="Pay" action="#{pay.submit()}" class="sub_o"/>
+        </h:form>
+        <h:panelGrid class="show_mes">
+                <h:dataTable value="#{showBuyerOrder.confirmOrder}" var="ord" border="" columnClasses="CC">
+                    <h:column class="or_info">
+                    <br/>
+                    <h:outputText value="Order ID: " class="order_put"/><h4 class="order_text">#{ord.ord_id}</h4>
+                    <h:outputText value="Product Name: "  class="order_put"/><h4 class="order_text">#{ord.pro_name}</h4>
+                    <h:outputText value="Seller Name: "  class="order_put"/><h4 class="order_text">#{ord.sell_name}</h4>
+                    <h:outputText value="Sell Price: "  class="order_put"/><h4 class="order_text">#{ord.sell_price}</h4>
+                    <h:outputText value="Your Price: "  class="order_put"/><h4 class="order_text">#{ord.buy_price}</h4>
+                </h:column>
+            </h:dataTable>
+            </h:panelGrid>
+
+
+    </h:body>
+</html>
+
+

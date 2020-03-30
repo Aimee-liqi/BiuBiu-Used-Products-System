@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    <h:head>
+        <title>Seller Account</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Seller.xhtml">
+             <ui:define name="seller_title">
+                 <h1  class="star_rating"> Seller Star Rating</h1>
+            </ui:define>
+            <ui:define name="seller_content">
+                <h:form id="seller_star_rating">
+                    <h1 class="post_h1">By evaluating the products and buyers you sell, we give you a star rating as following.</h1>
+                    <h:dataTable value="#{showP.seller}" var="sell" border="1" style="position: relative; top: 30px; left: 70px; font-size: 25px; font-family: Generica">
+                <h:column>
+                    <h:panelGroup>
+                        <h:outputLabel for="sell_name" value="Seller Name："/>
+                        <h:outputText id="sell_name" value="#{sell.sell_name}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="sell_level" value="Seller Level："/>
+                        <h:outputText id="sell_level" value="#{sell.sell_level}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="sell_contact" value="Seller Contact："/>
+                        <h:outputText id="sell_contact" value="#{sell.sell_contact}"/>
+                   </h:panelGroup>
+                    <br/>
+                </h:column>
+            </h:dataTable>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+

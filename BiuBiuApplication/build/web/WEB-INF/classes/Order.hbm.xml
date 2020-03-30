@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.biubiu.model.Order" table="OrderList">
+        <id name="ord_id" type="integer" column="ord_id">
+          <generator class="identity"/>
+      </id>
+      <property name="pro_id" type="integer">
+          <column name="pro_id" />
+      </property>
+      <property name="pro_name" type="string">
+          <column name="pro_name"/>
+      </property>
+      <property name="sell_name" type="string">
+          <column name="sell_name"/>
+      </property>
+      <property name="buy_id" type="string">
+          <column name="buy_id"/>
+      </property>
+      <property name="bidp_id" type="integer">
+          <column name="bidp_id" />
+      </property>
+      <property name="sell_price" type="float">
+          <column name="sell_price"/>
+      </property>
+      <property name="buy_price" type="float">
+          <column name="buy_price"/>
+      </property>
+      <property name="ord_state" type="string">
+          <column name="ord_state"/>
+      </property>
+    </class>
+</hibernate-mapping>

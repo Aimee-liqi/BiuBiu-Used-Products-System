@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      >
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    <h:head>
+        <title>Seller Account</title>
+
+    </h:head>
+    <h:body>
+        <!--Header-->
+        <h:form  class="home_unload_header" >
+            <h:outputLink  class="team_name" value="seller_account.xhtml?faces-redirect=true">BiuBiu</h:outputLink>
+            <h:inputText id="search" class="search_product" pt:placeholder="Search Product" value="#{search.proName}"  >
+            </h:inputText>
+            <h:commandButton class="search_img" image="images/search_icon.png" action="#{search.searchProduct}" />
+
+            <h:commandButton image="images/account_icon.png" class="account_icon" action="seller_account.xhtml?faces-redirect=true"/>
+            <h:commandLink value="#{account.account}" class="account_link" action="seller_account.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/shopcart_icon.png" class="order_icon"  action="ShowSellerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandLink value="My Order" class="order_link" action="ShowSellerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/help_icon.png" class="help_icon"  action="help_seller.xhtml?faces-redirect=true"/>
+            <h:commandLink value="Help Center" class="help_link" action="help_seller.xhtml?faces-redirect=true"/>
+        </h:form>
+        <!--Body-->
+        <table class="seller_container" id="x">
+            <!--
+            <thead class="head">
+                <!-Header->
+                <td>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:selectOneRadio class="language" value="#--><!--{data.selected}">
+                             <f:selectItem itemLabel="Chinese" itemValue="zh_CH"></f:selectItem>
+                             <f:selectItem itemLabel="English" itemValue="en_US"></f:selectItem>    
+                            </h:selectOneRadio>
+                        </h:panelGrid>
+                    </form>
+                </td>
+            </thead>
+            -->
+            <tbody class="seller_body">
+                <td class="seller_col1">
+                    <ui:include src="SellerSideBar.xhtml"/>
+                </td>
+                <td class="seller_col2">
+                    <h:graphicImage value="/images/line_icon.png" class="line" width="1px" height="1000px"/>
+                </td>
+                <td class="seller_col3">
+                    <div class="seller_title">
+                        <ui:insert name="seller_title"/>
+                    </div>
+                    <div  class="seller_content">
+                        <ui:insert name="seller_content"/>
+                    </div>
+                </td>
+            </tbody>   
+            <tfoot></tfoot>
+        </table>   
+
+
+
+    </h:body>
+</html>
+
+

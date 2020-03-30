@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    
+    <h:head>
+        <title>SellerSideBar</title>
+    </h:head>
+    <h:body>
+        <!--Body-->
+        <ul class="seller_nav"  id="side">
+            <h:form id="sideBar">
+                <li><h:outputText value="#{account.account}" class="sell_acc" /></li>
+                
+                <li> 
+                        <h:commandLink action="#{account.logout}" value="Log out" class="logout"/></li>
+                        
+                <li><h:commandLink action="seller_account.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Seller Star Rating</h5></h:commandLink></li>
+               
+                 <li><h:commandLink action="contact_buyers.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Contact and Review With Buyers</h5></h:commandLink></li>
+           
+                <li><h:commandLink action="PostProduct_seller.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Post Product</h5></h:commandLink></li>
+                
+                <li><h:commandLink action="ShowProductPersonal.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Show Post Product</h5></h:commandLink></li>
+                           
+                <li><h:commandLink action="ShowBidList_seller.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Bid List</h5></h:commandLink></li>
+                
+                <li><h:commandLink action="ShowSellerOrderList_seller.xhtml?faces-redirect=true"  class="seller_bar_link"><h5 class="seller_bar">Seller Order</h5></h:commandLink></li>
+            </h:form>
+        </ul>
+       
+
+    </h:body>
+</html>
+
+
+
+

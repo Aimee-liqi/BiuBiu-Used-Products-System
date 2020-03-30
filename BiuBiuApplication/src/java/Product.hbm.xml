@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.biubiu.model.Product" table="Product">
+      <id name="pro_id" type="integer" column="pro_id">
+          <generator class="identity"/>
+      </id>
+      <property name="pro_name" type="string">
+          <column name="pro_name"/>
+      </property>
+      <property name="pro_type" type="string">
+          <column name="pro_type"/>
+      </property>
+      <property name="pro_contactNum" type="string">
+          <column name="contactNum"/>
+      </property>
+      <property name="pro_details" type="string">
+          <column name="pro_details"/>
+      </property>
+      <property name="pro_expiry" type="string">
+          <column name="pro_expiry"/>
+      </property>
+      <property name="pro_minPrice" type="float">
+          <column name="minPrice"/>
+      </property>
+      <property name="pro_origPrice" type="float">
+          <column name="origPrice"/>
+      </property>
+      <property name="pro_posttime" type="string">
+          <column name="post_time"/>
+      </property>
+      <property name="pro_usetime" type="string">
+          <column name="pro_usetime"/>
+      </property>
+      <property name="seller_id" type="string">
+          <column name="sell_id"/>
+      </property>
+      <property name="seller_level" type="string">
+          <column name="sell_level"/>
+      </property>
+      <property name="pro_imgPath" type="string">
+          <column name="pro_imgPath"/>
+      </property>
+  </class>
+</hibernate-mapping>

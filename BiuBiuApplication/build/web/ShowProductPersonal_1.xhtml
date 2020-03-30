@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:dataTable value="#{showPP.product}" var="pro"  border="1">   
+            <h:column>
+               <h:panelGrid columns="2">  
+               <h:graphicImage value="#{pro.pro_imgPath}" style="height:200px;width:200px"/>
+               <h:panelGrid columns="1">
+                   <h:outputText id="proname" value="#{pro.pro_name}" style=" font-size: 30px"/>
+                   <h:panelGroup>
+                        <h:outputLabel for="protype" value="Type："/>
+                        <h:outputText id="protype" value="#{pro.pro_type}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                        <h:outputLabel for="prominprice" value="Minimum Bid Price:"/>
+                        <h:outputText id="prominprice" value="#{pro.pro_minPrice}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                        <h:outputLabel for="proorigprice" value="Orignal Price:"/>
+                        <h:outputText id="proorigprice" value="#{pro.pro_origPrice}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="prousetime" value="Product Usetime:"/>
+                       <h:outputText id="prousetime" value="#{pro.pro_usetime}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="prodetail" value="Product Details:"/>
+                       <h:outputText id="prodetail" value="#{pro.pro_details}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="proposttime" value="Posttime:"/>
+                       <h:outputText id="proposttime" value="#{pro.pro_posttime}"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="proexpiry" value="Expiry:"/>
+                       <h:outputText id="proexpiry" value="#{pro.pro_expiry}"/>
+                   </h:panelGroup>
+                   
+               </h:panelGrid>
+               </h:panelGrid>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

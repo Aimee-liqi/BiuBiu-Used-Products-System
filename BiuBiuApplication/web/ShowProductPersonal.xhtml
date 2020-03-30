@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    <h:head>
+        <title>Show Product Personal</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Seller.xhtml">
+             <ui:define name="seller_title">
+                 <h1  class="star_rating">Show Product Personal</h1>
+            </ui:define>
+            <ui:define name="seller_content">
+                <h:form id="seller_star_rating">
+                    <h:dataTable value="#{showPP.product}" var="pro"  border="1" class="show_postlist">   
+            <h:column>
+               <h:panelGrid columns="2">  
+               <h:graphicImage value="#{pro.pro_imgPath}" style="height:200px;width:200px"/>
+               <h:panelGrid columns="1">
+                   <h:outputText id="proname" value="#{pro.pro_name}" style=" font-size: 30px; color: red; text-align: center" />
+                   <h:panelGroup>
+                       <h:outputLabel for="protype" value="Type：" class="h"/>
+                        <h:outputText id="protype" value="#{pro.pro_type}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                        <h:outputLabel for="prominprice" value="Minimum Bid Price:"  class="h"/>
+                        <h:outputText id="prominprice" value="#{pro.pro_minPrice}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                        <h:outputLabel for="proorigprice" value="Orignal Price:"  class="h"/>
+                        <h:outputText id="proorigprice" value="#{pro.pro_origPrice}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="prousetime" value="Product Usetime:"  class="h"/>
+                       <h:outputText id="prousetime" value="#{pro.pro_usetime}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="prodetail" value="Product Details:"  class="h"/>
+                       <h:outputText id="prodetail" value="#{pro.pro_details}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="proposttime" value="Posttime:"  class="h"/>
+                       <h:outputText id="proposttime" value="#{pro.pro_posttime}"  class="s"/>
+                   </h:panelGroup>
+                   <h:panelGroup>
+                       <h:outputLabel for="proexpiry" value="Expiry:"  class="h"/>
+                       <h:outputText id="proexpiry" value="#{pro.pro_expiry}"  class="s"/>
+                   </h:panelGroup>
+                   
+               </h:panelGrid>
+               </h:panelGrid>
+            </h:column>
+        </h:dataTable>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+
+
+

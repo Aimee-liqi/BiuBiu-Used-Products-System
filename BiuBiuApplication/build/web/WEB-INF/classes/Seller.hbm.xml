@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.biubiu.model.Seller" table="Seller">
+      <id name="sell_id" type="string">
+          <column name="sell_id"/>
+      </id>
+      <property name="sell_name" type="string">
+          <column name="sell_name"/>
+      </property>
+      <property name="sell_pass" type="string">
+          <column name="sell_pass"/>
+      </property>
+      <property name="sell_contact"  type="string">
+          <column name="sell_contact"/>
+      </property>
+      <property name="sell_level" type="string">
+          <column name="sell_level"/>
+      </property>
+       <property name="sell_good" type="float">
+           <column name="sell_good"/>
+      </property>
+      <property name="sell_bad" type="float">
+          <column name="sell_bad"/>
+      </property>
+  </class>
+  
+
+</hibernate-mapping>

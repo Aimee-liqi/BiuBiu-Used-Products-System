@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.biubiu.model.payInfo" table="payInfo" >
+        <id name="pay_id" type="integer" column="pay_id">
+          <generator class="identity"/>
+      </id>
+      <property name="first_name" type="string">
+          <column name="first_name" />
+      </property>
+      <property name="last_name" type="string">
+          <column name="last_name" />
+      </property>
+      <property name="address" type="string">
+          <column name="address" />
+      </property>
+      <property name="mobile" type="string">
+          <column name="mobile" />
+      </property>
+      <property name="ccNum" type="string">
+          <column name="ccNum" />
+      </property>
+      <property name="ccName" type="string">
+          <column name="ccName" />
+      </property>
+      <property name="cvv" type="integer">
+          <column name="cvv" />
+      </property>
+      <property name="ord_id" type="integer">
+          <column name="ord_id" />
+      </property>
+    </class>
+</hibernate-mapping>

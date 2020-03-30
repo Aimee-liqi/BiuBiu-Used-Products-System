@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+        <link rel="stylesheet" type="text/css" href="CSS/feedback.css"/>
+    <h:head>
+        <title>Feedback</title>
+    </h:head>
+    <h:body>
+        <h:form >
+        <composite:interface>
+            <composite:attribute name="feedback_idText" default="Enter your ID" />
+            <composite:attribute name="feedback_content" default="Enter your feedback"/>
+            <composite:attribute name="feedback_command" default="Submit"/>
+            
+        </composite:interface>
+        <composite:implementation>
+            <h:panelGrid columns="2" style="text-align: center">
+             <h:outputLabel for="uid" value="ID" style="font-size: 25px; text-align: center"/>
+            <h:inputText id="uid" pt:placeholder="#{cc.attrs.feedback_idText}" class="enter_id" required="true" requiredMessage="Please enter you ID" value="#{feedback.id}"/>
+            <h:outputLabel for="ufeed" value="Feedback" style="font-size: 25px;"/> 
+            <h:inputTextarea id="ufeed" pt:placeholder="#{cc.attrs.feedback_content}" value="#{feedback.content}"  class="enter_feedback"/>
+            <h:commandButton value="#{cc.attrs.feedback_command}" action="#{feedbackbean.submit(feedback)}"  class="feed_b"/> 
+            </h:panelGrid>
+        </composite:implementation>
+        </h:form>
+    </h:body>
+</html>
+

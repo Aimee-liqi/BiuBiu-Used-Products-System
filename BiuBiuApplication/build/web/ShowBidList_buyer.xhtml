@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/buyer_format.css"/>
+    <h:head>
+        <title>ShowBidList</title>
+    </h:head>
+    <h:body>
+        <!--body-->
+         <ui:composition template="Format_Buyer.xhtml">
+             <ui:define name="buyer_title">
+                 <h1  class="star_rating">Bid List</h1>
+            </ui:define>
+            <ui:define name="buyer_content">
+                <h:form  class="showbid_buyer">
+                    <h:dataTable value="#{showBid.bidproduct}" var="bidp" border="1" class="showbid_buyer_table">
+                        <h:column class="column_bid">
+                <f:facet name="header">
+                <h:outputText value="Product_id"/>
+                </f:facet>
+                #{bidp.pro_id}
+            </h:column>
+            <h:column class="column_bid">
+                <f:facet name="header">
+                    <h:outputText value="Product_name"/>
+                </f:facet>
+                #{bidp.pro_name}
+            </h:column>
+            <h:column class="column_bid">
+                <f:facet name="header">
+                    <h:outputText value="minPrice"/>
+                </f:facet>
+                #{bidp.pro_minPrice}
+            </h:column>
+            <h:column class="column_bid">
+                <f:facet name="header">
+                    <h:outputText value="Buyer_price"/>
+                </f:facet>
+                #{bidp.buy_price}
+            </h:column>
+            <h:column rendered="#{showBid.show}" class="column_bid" >
+                <f:facet name="header">
+                    <h:outputText value="Buyer_name"/>
+                </f:facet>
+                #{bidp.buy_name}
+            </h:column>
+            <h:column rendered="#{showBid.show}" class="column_bid">
+                <h:commandButton value="Sell" title="#{bidp.id}" actionListener="#{createorder.createOrder}"/>
+            </h:column>
+        </h:dataTable>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+    </h:body>
+</html>
+

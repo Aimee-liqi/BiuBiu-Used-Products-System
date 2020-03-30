@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/buyer_format.css"/>
+    <h:head>
+        <title>Contact Sellers</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Buyer.xhtml">
+             <ui:define name="buyer_title">
+                 <h1  class="star_rating">Contact Sellers</h1>
+            </ui:define>
+            <ui:define name="buyer_content">
+                <h:form id="buyer_star_rating"  class="co">
+                    <h:commandButton value="Show" action="#{buy_page.showBuyerMessage()}" style="height: 40px;  width: 90px; background-color: white; outline-style: none; border-color: black; -webkit-border-radius: 10px; font-size: 25px;"/>
+            <h:dataTable value="#{buy_page.cb}" var="cb">
+            <f:facet name="header">
+                <h:outputText value="Income Message" style="font-family: Uni Sans CAPS; font-size: 20px"/>
+            </f:facet>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText/>
+                </f:facet>
+                #{cb.sendtime}<br/>
+                #{cb.sell_id}:
+                #{cb.content}
+            </h:column>                
+            </h:dataTable>
+            <h:inputText id="s" pt:placeholder="Seller ID" value="#{buy_page.sell_id}" class="con_in">
+            </h:inputText><br/>
+            <h:inputText id="content" pt:placeholder="Chat With Seller Now " value="#{buy_page.content}" class="con_in"/><br/>
+            <h:commandButton value="Send" action="#{buy_page.save()}" style="height: 40px; width: 90px; background-color: white; outline-style: none; border-color: black; -webkit-border-radius: 10px; font-size: 25px;"/>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+

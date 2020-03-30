@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" type="text/css" href="CSS/home.css"/>
+    <h:head>
+        <title>Buyer Page</title>
+    </h:head>
+    <h:body>
+        <!--Header-->
+        <h:form  class="home_unload_header" >
+            <h:outputLink  class="team_name" value="buyer.xhtml?faces-redirect=true">BiuBiu</h:outputLink>
+            <h:inputText id="search" class="search_product" pt:placeholder="Search Product" value="#{search.proName}"  >
+            </h:inputText>
+            <h:commandButton class="search_img" image="images/search_icon.png" action="#{search.searchProduct}" />
+
+            <h:commandButton image="images/account_icon.png" class="account_icon" action="buyer_account.xhtml?faces-redirect=true"/>
+            <h:commandLink value="#{account.account}" class="account_link" action="buyer_account.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/shopcart_icon.png" class="order_icon"  action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandLink value="My Order" class="order_link" action="ShowBuyerOrderList.xhtml?faces-redirect=true"/>
+            <h:commandButton image="images/help_icon.png" class="help_icon"  action="help.xhtml?faces-redirect=true"/>
+            <h:commandLink value="Help Center" class="help_link" action="help.xhtml?faces-redirect=true"/>
+        </h:form>
+        <!--Body-->
+        <h:form class="home_body_left"><br/>
+            <h:commandLink value="Everything" id="everything" class="everything" action="buyer.xhtml?faces-redirect=true"  /><br/><br/>
+
+            <h:commandLink value="Men" class="men"  id="men"  action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Women" class="women"  id="women"   action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Kids" class="kids"  id="kids"    action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Electronics" class="electronics"  id="electronics" action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Food" class="food" id="food"  action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Homeware" class="homeware"  id="homeware"  action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Movies and Music" class="movies_music" id="movies_music"  action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Outdoors" class="outdoors"   id="outdoors"  action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Stationery" class="stationery"  id="stationery" action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+            <h:commandLink value="Toys" class="toys" id="toys" action="ProductType.xhtml?faces-redirect=true"  actionListener="#{type.searchProType}" /><br/><br/>
+        </h:form>
+        <h:form class="home_body_center">
+            <h:panelGrid class="fliter">
+                <h:panelGroup>
+                    <h2 class="filiter_font">You can screen items according to the buttons below.</h2>
+                    <h:commandButton value="Price↑" class="fliter_priceup" action="#{data.priceAsc}"/>
+                    <h:commandButton value="Price↓" class="fliter_pricedown" action="#{data.priceDesc}"/>
+                    <h:commandButton value="Seller's Rating↑" class="fliter_ratingup" action="#{data.rateAsc}"/>
+                    <h:commandButton value="Seller's Rating↓" class="fliter_ratingdown" action="#{data.rateDesc}"/> 
+
+
+
+                    <h:selectOneMenu id="fliter_posttime" class="fliter_posttime" label="Post Time" valueChangeListener="#{data.postTimeAction}"   onchange="this.form.submit()">
+                        <f:selectItem id="posttime" itemLabel="Post Time" itemValue=" " />
+                        <f:selectItem id="time_1hours" itemLabel="Post in Last 1 hours" itemValue="last1hour"/>
+                        <f:selectItem id="time_12hours" itemLabel="Post in Last 12 hours" itemValue="last12hours"/>
+                        <f:selectItem id="today" itemLabel="Post Today" itemValue="today"/>
+                        <f:selectItem id="lastweek" itemLabel="Post in Last Week" itemValue="lastweek"/>
+                    </h:selectOneMenu>
+                    <h:commandButton value="Search Post Time" action="#{data.emptyaction}" class="search_posttime"/>
+                </h:panelGroup>
+            </h:panelGrid>
+        </h:form>
+
+
+
+        <h:form id="proView" class="product_show">
+            <table border="5"  cellpadding="10px" cellspacing="10px" style="-webkit-border-radius: 10px">
+                <ui:repeat value="#{data.infoList}" var="proList">
+                    <tr>
+                        <ui:repeat value="#{proList}" var="pro" >
+                            <td>
+                                <h:panelGrid columns="1" style="position:relative; left: 0px; margin-bottom: -100px; width: 290px;">
+                                    <h:graphicImage value="#{pro.pro_imgPath}" style="height:200px;width:200px; -webkit-box-shadow:  5px 10px 15px  #999999;" />
+                                    <h3><h:commandLink class="pro_link" value="#{pro.pro_name}" actionListener="#{showPro.showProduct}" action="ShowProduct.xhtml?faces-redirect=true" title="#{pro.pro_id}"></h:commandLink></h3>
+                                    <h:outputText value="minprice :" class="min_price_text"></h:outputText>
+                                    <h4 class="min_price"> #{pro.pro_minPrice}</h4>
+                                    <h:outputText value="origprice :"  class="orig_price_text">
+                                    </h:outputText>
+                                    <h4 class="orig_price"> #{pro.pro_origPrice}</h4>
+
+                                </h:panelGrid>
+                            </td>
+                        </ui:repeat>
+                    </tr> 
+                </ui:repeat>
+            </table>
+        </h:form>
+
+
+
+        <!--Footer-->
+        <hr/>
+        <div class="foot">
+            <h:form class="home_unload_footer">
+                <div class="footer1">
+                    <h1><center>Need Help?</center></h1>
+                    <h4>Talk to us about your need</h4>
+                    <h4>Call : 17863901848</h4>
+                </div>
+                <div class="footer2">
+                    <h1>Stay in Know</h1>
+                    <h4>Sign  up for us news, sales and deals.</h4>
+                    <h:inputText class="footer_email" pt:placeholder="12345@qq.com"/>
+                    <h:commandButton image="images/email_icon.png" class="footer_email_icon"/>
+                </div>
+                <div  class="footer3">
+                    <h1>Contact Us</h1>
+                    <h4>If you want to konw more about our shop, please contact us.</h4>
+                    <h:commandButton class="footer_contact_button" value="Contact Us" action="contact.xhtml?faces-redirect=true"/>
+                </div>
+            </h:form>
+            <br/>
+            <hr/>
+            <h:form class="home_unload_footer">
+                <h2 class="footer_title">BiuBiu Used Shopping Center</h2>
+                <div class="link">
+                    <h:commandLink class="footer_about" value="About Us" action="about.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_contact" value="Feedback" action="Feed_back.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_seeFee" value="Show Feedback" action="ShowFeedback.xhtml?faces-redirect=true"/>
+                    <h:commandLink class="footer_help" value="Help" action="help.xhtml?faces-redirect=true"/><br/>
+                </div>
+                <h4 class="copyright">Copyright © 2017 Biubiubiu letitbeme.com-All Rights Reserved</h4>
+                <h:graphicImage value="images/BiuBiu_icon.png" class="biu_img" width="242px" height="48px"/>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
+

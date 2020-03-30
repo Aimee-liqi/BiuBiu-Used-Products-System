@@ -1,0 +1,774 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1517-12-2, 15:59:42
+    Author     : Administrator
+*/
+
+
+/*Header*/
+.home_unload_header{
+    background: #666666;
+    width: 100%;
+    height: 60px;
+     position: fixed;
+     top:0;
+    left:0;
+    right:0;
+     z-index:2147483647;
+}
+.team_name{
+    font-family: "Starry Night";
+     font-size: 40px;
+     border-radius: 10px;
+     font-weight: bold;
+     margin-left: 30px;
+     text-align: left;
+     text-decoration: none;
+     color: #ffffff;
+    padding-top: 10px;
+}
+.search_img{
+    top:15px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.search_product{
+     margin-left: 100px;
+     border-radius:20px;
+     height: 35px;
+     width: 40%;
+     outline-style:  none;
+}
+
+
+.account_icon{
+    top:5px;
+    left: 70px;
+    position: relative;
+    height:21px;
+    width:21px;
+}
+.account_link{
+     top:-40px;
+     left: -60px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    color: white;
+    position: relative;
+    margin-left: 995px;
+    height: 10px;
+}
+.order_icon{
+      top:-34px;
+      left: -25px;
+     position: relative;
+     height:25px;
+    width:25px;
+}
+.order_link{
+    top:-40px;
+    left: -10px;
+     text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    color: white;
+    position: relative;
+}
+
+.help_icon{
+    top:-34px;
+      left: 30px;
+     position: relative;
+     height:22px;
+    width:22px;
+}
+.help_link{
+       top:-40px;
+    left: 45px;
+     text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    color: white;
+    position: relative;
+}
+
+/*Body*/
+
+.home_body_left{
+    top:0px;
+    width: 15%;
+    margin-top: 80px;
+    position:  relative;
+    background-color:  #666666;
+     -webkit-border-radius: 10px;
+     font-size: 25px;
+      text-height: 30px;
+      
+     font-family: "Loomis Sans";
+     text-align: center;
+     color: white;
+}
+.everything,.men,.women, .kids, .electronics, .food, .homeware, .movies_music, .outdoors, .stationery , .toys
+{
+    color: white;
+    top: 5px;
+     text-decoration: none;
+   
+}
+.home_body_right{
+     top:0px;
+    width: 15%;
+    margin-top: 80px;
+    position:  fixed;
+     -webkit-border-radius: 10px;
+     right: 0px;
+}
+.fliter{
+    
+    width: 75%;
+    top: -560px;
+    position:  relative;
+    left:300px;
+    background:#cccccc;
+    -webkit-border-radius: 20px;
+    height: 180px;
+    text-align: center;
+}
+.search_posttime{
+    text-align: center;
+    position:relative;
+    background-color: white;
+    top:7px;
+    left: 20px;
+    color:black;;
+    height:20px;
+    width:120px;
+    outline-color: black;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 12px;
+}
+.filiter_font{
+    font-family: "OPTIDiannaScript";
+    font-size: 35px;
+}
+.filiter_font2{
+    position: relative;
+    top:-40px;
+    font-family: "icomoon";
+    color:  #666666;
+    font-size: 20px;
+}
+.fliter_priceup{
+    position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:70px;
+    border-color: black;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    margin-left: 0px;
+}
+.fliter_priceup:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.fliter_pricedown{
+    position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:70px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    margin-left: 55px;
+}
+.fliter_pricedown:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.fliter_ratingup{
+    position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:140px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    margin-left: 55px;
+    
+}
+.fliter_ratingup:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.fliter_ratingdown{
+    position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:140px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    margin-left: 55px;
+    
+}
+.fliter_ratingdown:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.fliter_posttime{
+        position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:100px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    margin-left: 55px;
+}
+.fliter_posttime:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.posttime{
+     background-color: white;
+    color:black;
+     border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    
+}
+.posttime:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+
+.items{
+    
+    width: 60%;
+    position:  relative;
+    -webkit-border-radius: 20px;
+    margin-left: 270px;
+    top:-500px;
+}
+.product_show{
+       
+    width: 75%;
+    top: -500px;
+    position:  relative;
+    left:300px;
+    -webkit-border-radius: 20px;
+    text-align: center;
+    margin-bottom: -450px;
+}
+.pro_link{
+    font-family: "Generica";
+    text-decoration:underline;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+     border-color: black;
+}
+.pro_link:hover{
+    font-family: "Generica";
+    text-decoration: none;
+    color:red;
+     font-weight: bold
+    
+}
+.min_price_text{
+        font-family: "icomoon";
+    text-decoration: none;
+    color: #5294ab;
+     font-weight: bold;
+     font-size: 17px;
+     margin-left: -80px;
+     top: 30px;
+     position: relative;
+}
+.min_price{
+    color:#000000;
+     font-size: 20px;
+     left: 50px;
+     position: relative;
+     top: -25px;
+}
+.wo{
+        width: 540px;
+    height: 350px;
+    margin-left: 400px;
+    margin-top:180px;
+    margin-bottom: 150px;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    color:  #ff6666;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow:  5px 10px 15px  #999999
+}
+.post_suc{
+    padding-top: 50px;
+    font-family: "Generica";
+    font-size: 55px;
+}
+.seePro{
+     position: relative;
+    background-color: white;
+    color:black;
+    height:40px;
+    width:200px;
+    left: 0px;
+    top:50px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    bottom: -60px;
+}
+
+.seePro:hover{
+    color: black;
+    background-color: #ff6666;
+    border-color: black;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.orig_price_text{
+            font-family: "icomoon";
+    text-decoration: none;
+    color:#ff6666;
+     font-weight: bold;
+     font-size: 17px;
+     margin-left: -80px;
+     top: -30px;
+     position: relative;
+}
+.orig_price{
+        color:#000000;
+     font-size: 20px;
+     left: 50px;
+     position: relative;
+     top: -85px;
+}
+.seller_order{
+    position: relative;
+    top: 30px;
+    left: 300px;
+    background: #cccccc;
+    
+}
+.zz{
+     width: 550px;
+    height:400px;
+    position: relative;
+    top: 100px;
+    left: 400px;
+    border-color: black;
+    margin-bottom: 190px;
+    background-color: white;
+    -webkit-box-shadow:  5px 10px 15px  #999999;
+    -webkit-border-radius: 20px;
+}
+.your_order{
+    color:  #ff6666;
+    padding-top: 50px;
+    font-family: "Generica";
+    font-size: 60px;
+    padding-left: 130px;
+}
+.lonely{
+    font-family: "Generica";
+    font-size: 20px;
+    color:  black;
+    padding-top: -20px;
+    padding-left: 135px
+}
+.go_login{
+     position: relative;
+    background-color: white;
+    color:black;
+    height:40px;
+    width:200px;
+    left: 170px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    bottom: -60px;
+}
+
+.go_login:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+.subm_or{
+    top: 20px;
+   left: 100px;
+    height: 700px;
+    width: 700px;
+    position: relative;
+    line-height: 90px;
+}
+.info{
+    font-family: "Generica";
+    font-size: 50px;
+    color:   #ff6666;
+    padding-left: 30px;
+    padding-top: 100px;
+}
+.NN{
+    font-family: "Uni Sans CAPS";
+    font-size: 20px;
+    line-height: 50px;
+}
+.input{
+     text-decoration: none;
+    border-color: #666666;
+    border-style: solid;
+    -webkit-border-radius: 10px;
+    font-size: 20px;
+    height: 30px;
+    font-family: "Generica";
+    color:  black;
+    outline-style:  none;
+}
+.input:hover{
+    outline: none;
+    border-color: black;
+}
+.input_area{
+    font-family: "Generica";
+     border-radius:20px;
+     height: 30px;
+     width: 200px;
+     outline-style:  none;
+      position: relative;
+      outline-style: none;
+      font-size: 15px;
+      color: #666666;
+      resize:  vertical;
+        columns: 7;
+        max-height: 90px;
+        min-height: 33px;
+        word-wrap: break-word;
+        word-break:  keep-all;
+        border-style: solid;
+      
+}
+.input_area:hover{
+    border-color: black;
+    border-style:  solid;
+}
+.show_mes{
+    position: fixed;
+    margin-top: -840px;
+    margin-left: 900px;
+    width: 400px;
+    height: 220px;
+    border-color: black;
+    border-style: solid;
+    -webkit-border-radius: 20px;
+}
+.CC{
+ width: 400px   ;
+}
+.order_put{
+        font-family: "Generica";
+    text-decoration: none;
+    color: #5294ab;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+}
+.order_text{
+    font-size: 17px;
+    top: -46px;
+    font-family: "Generica";
+    right: -165px;
+    position: relative;
+}
+.or_info{
+    text-align: center;
+    width: 550px;
+}
+.sub_o{
+    position: relative;
+    background-color: white;
+    color:black;
+    height:40px;
+    width:200px;
+    left: 150px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+
+.sub_o:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+/*Footer*/
+.home_unload_footer{
+    position: relative;
+    margin-bottom:0px; 
+    width: 100%;
+    height: 250px;
+}
+.footer1{
+    text-align: center;
+    color: black;
+    font-family:"张海山锐线体简"; 
+    position: relative;
+    width: 25%;
+    bottom: -50px;
+}
+.footer2{
+    text-align: center;
+    color: black;
+    font-family:"张海山锐线体简"; 
+    position: relative;
+    width: 30%;
+    bottom:95px;
+   left:440px;
+}
+.footer_email{
+    margin-left: 100px;
+     border-radius:20px;
+     height: 30px;
+     width: 200px;
+     outline-style:  none;
+      position: relative;
+      left: -50px;
+      outline-style: none;
+      font-family: "张海山锐线体简";
+      font-size: 20px;
+      color: black;
+      bottom: 15px;
+      
+}
+.footer_email:hover{
+    border-color: black;
+    border-style:  solid;
+}
+.footer_email_icon{
+    position: relative;
+    top: 0px;
+     left: -40px;
+     width: 46px;
+     height: 46px;
+}
+.footer3{
+    text-align: center;
+    color: black;
+    font-family:"张海山锐线体简"; 
+    position: relative;
+    width: 25%;
+    bottom: 275px;
+    left: 945px;
+}
+.footer_contact_button{
+        position:relative;
+    background-color: white;
+    color:black;;
+    height:30px;
+    width:70px;
+    border-color: black;
+    border-style:solid;
+    border-radius:6px;
+    outline-style: none;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+    bottom: 10px;
+}
+
+.footer_contact_button:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+    border-style:  solid;
+    -webkit-border-radius: 20px;
+    text-decoration: none;
+    outline-style: none;
+    font-family: "segoeuil";
+    font-size: 15px;
+}
+
+
+.home_unload_footer{
+    font-family: "segoeuil";
+    text-align: center;
+    
+}
+.footer_title{
+    color:  black;
+    font-family: "OctemberScript";
+    font-size: 35px;
+    
+    text-align: center
+}
+.footer_about,.footer_contact,.footer_seeFee,.footer_help
+{
+     
+    text-decoration: none;
+    border-color: white;
+    border-style: dotted;
+    -webkit-border-radius: 10px;
+    border-left-width: 100px;
+    font-size: 20px;
+    font-family: "Generica";
+    font-weight: bold;
+    color: #999999;
+    word-spacing: 20px;
+}
+.footer_about:hover,.footer_contact:hover,.footer_seeFee:hover,.footer_help:hover
+{
+    color: black;
+}
+.link{
+    outline-color: black;
+    width: 810px;
+    text-align: center;
+    margin-left: 220px;
+}
+.copyright{
+    font-family:"Gabriola";
+    font-size: 15px;
+}
+.fo1{
+    position: relative;
+    width: 20%;
+    font-family: "Verdana";
+    color:  #666666;
+    font-size: 20px;
+    left: 10px;
+    text-align: left;
+    text-decoration: none
+    
+}
+.fo1:hover{
+    color: black;
+}
+.foot{
+   width: 100%;
+    height:650px;   /* footer的高度一定要是固定值*/ 
+    position:absolute;
+    margin-bottom:0px;
+    left:0px;
+    background: white;
+}

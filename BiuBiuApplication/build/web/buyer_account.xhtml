@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/buyer_format.css"/>
+    <h:head>
+        <title>Buyer Account</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Buyer.xhtml">
+             <ui:define name="buyer_title">
+                 <h1  class="star_rating">Personal star rating</h1>
+            </ui:define>
+            <ui:define name="buyer_content">
+                <h:form id="buyer_star_rating">
+                    <h1 class="bar_h1">By evaluating the products amount you bought and the products you reviewed, we give you a star rating as following.</h1>
+                     <h:dataTable value="#{showP.buyer}" var="buy" border="1">
+                <h:column>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_name" value="Buyer Name："/>
+                        <h:outputText id="buy_name" value="#{buy.buy_name}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_level" value="Buyer Level："/>
+                        <h:outputText id="buy_level" value="#{buy.buy_level}"/>
+                   </h:panelGroup>
+                    <br/>
+                    <h:panelGroup>
+                        <h:outputLabel for="buy_times" value="Shopping times："/>
+                        <h:outputText id="buy_times" value="#{buy.buy_times}"/>
+                   </h:panelGroup>
+                </h:column>
+            </h:dataTable>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/buyer_format.css"/>
+    <h:head>
+        <title>Show Buyer Order List</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Buyer.xhtml">
+             <ui:define name="buyer_title">
+                 <h1  class="star_rating">Buyer Order List</h1>
+            </ui:define>
+            <ui:define name="buyer_content">
+                <h:form id="buyer_star_rating">
+                    <h:dataTable value="#{showBuyerOrder.order}" var="ord" border="1" class="showorder_buyer_table">
+            <h:column>
+                <f:facet name="header">
+                <h:outputText value="Order_id"/>
+                </f:facet>
+                #{ord.ord_id}
+            </h:column>
+             <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Product_ID"/>
+                </f:facet>
+                #{ord.pro_id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Product_name"/>
+                </f:facet>
+                #{ord.pro_name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Seller_name"/>
+                </f:facet>
+                #{ord.sell_name}
+            </h:column>
+            <h:column >
+                <f:facet name="header">
+                    <h:outputText value="Sell_price"/>
+                </f:facet>
+                #{ord.sell_price}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Your_price"/>
+                </f:facet>
+                #{ord.buy_price}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Order_state"/>
+                </f:facet>
+                #{ord.ord_state}
+            </h:column>
+            <h:column>
+                <h:commandButton value="Submit" action="SubmitOrder.xhtml?faces-redirect=true" title="#{ord.ord_id}" actionListener="#{showBuyerOrder.getID}"/>
+            </h:column>
+        </h:dataTable>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <link rel="stylesheet" type="text/css" href="CSS/seller_format.css"/>
+    <h:head>
+        <title>Contact and Review With Buyers</title>
+    </h:head>
+    <h:body>
+
+         <!--body-->
+         <ui:composition template="Format_Seller.xhtml">
+             <ui:define name="seller_title">
+                 <h1  class="star_rating">Contact With Buyers</h1>
+            </ui:define>
+            <ui:define name="seller_content">
+                <h:form id="seller_star_rating" class="co">
+                    <h:commandButton value="Show" action="#{sell_page.showSellerMessage()}"  style="height: 40px;
+                                     width: 90px; background-color: white; outline-style: none; border-color: black; -webkit-border-radius: 10px; font-size: 25px;"/>
+                    <h:dataTable value="#{sell_page.cs}" var="cs" >
+            <f:facet name="header">
+                <h:outputText value="Income Message" style="font-family: Uni Sans CAPS; font-size: 20px"/>
+            </f:facet>
+            <h:column>
+                <f:facet name="header">
+                </f:facet>
+                 #{cs.sendtime}<br/>
+                   #{cs.buy_id}  :
+                #{cs.content}
+            </h:column>                
+            </h:dataTable>
+                    <h:inputText id="buy_id" pt:placeholder="Buyer ID" value="#{sell_page.buy_id}" class="con_in">
+            </h:inputText><br/>
+            <h:inputText id="content" pt:placeholder="Chat With Seller Now " value="#{sell_page.content}" class="con_in"/><br/>
+            <h:commandButton value="Send" action="#{sell_page.save}" style="height: 40px;
+                                     width: 90px; background-color: white; outline-style: none; border-color: black; -webkit-border-radius: 10px; font-size: 25px;"/>
+                </h:form>
+            </ui:define>
+         </ui:composition>
+     
+    </h:body>
+</html>
+
+
